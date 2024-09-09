@@ -7,23 +7,23 @@ import { db } from "@/src/db";
 
 const app = new Hono().basePath("/api");
 
-// 中间件
+// 接口路由的中间件
 
 app.use(logger());
 app.use(async (_, next) => {
-  console.log("middleware 1 start");
+  console.log("api log middleware 1 start");
   let log = await db.runLog.create({});
   await next();
   log = await db.runLog.update({
     where: { id: log.id },
     data: { updatedAt: new Date() },
   });
-  console.log("middleware 1 end", log.id);
+  console.log("api log middleware 1 end", log.id);
 });
 app.use(async (_, next) => {
-  console.log("middleware 2 start");
+  console.log("api mock middleware 2 start");
   await next();
-  console.log("middleware 2 end");
+  console.log("api mock middleware 2 end");
 });
 
 
