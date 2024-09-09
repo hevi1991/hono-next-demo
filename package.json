@@ -1,0 +1,26 @@
+{
+  "name": "hono-next",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "db:dev:view": "prisma studio"
+  },
+  "dependencies": {
+    "@prisma/client": "5.19.1",
+    "hono": "^4.5.11",
+    "next": "14.2.5",
+    "node-cron": "^3.0.3",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "18.11.18",
+    "@types/node-cron": "^3.0.11",
+    "@types/react": "18.0.26",
+    "@types/react-dom": "18.0.10",
+    "prisma": "^5.19.1",
+    "typescript": "^5"
+  }
+}
